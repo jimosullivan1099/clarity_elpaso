@@ -133,7 +133,21 @@
   - measure: last_exit
     label: 'Last Exit'
     type: date
-    sql: MAX(${TABLE}.end_date)
+    sql: |
+      CASE
+      WHEN MAX( COALESCE(${end_date},'2099-12-31')) = '2099-12-31' THEN
+      NULL
+      ELSE MAX( COALESCE(${end_date},'2099-12-31'))
+      END
+
+#     sql: |
+#       CASE
+#       WHEN ${enrollments.head_of_household} = 1
+#       AND ${TABLE}.disabled = 1 AND  
+#       ( ${TABLE}.chronic_1 = 1 OR  ${TABLE}.chronic_2 = 4) 
+#       THEN 'Chronic Homeless'    
+#       ELSE 'Not Chronic Homeless'    
+#       END
 
 
 
