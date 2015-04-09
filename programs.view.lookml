@@ -129,7 +129,7 @@
     
   - measure: list_of_program_names
     type: list
-    list_field: name
+    list_field: agency_project_name
     
   - dimension: agency_project_name
     label: 'Full Name'
