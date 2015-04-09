@@ -45,7 +45,7 @@
       sql_on: ${base.ref_program} = ${enrollments.id}
       
     - join: programs
-      fields: [ref_agency, name, project_type_code, funder, id, name_link_agency, list_of_program_names, status, added_date, description, count, name_link]
+      fields: [ref_agency, name, project_type_code, funder, id, agency_project_name, name_link_agency, list_of_program_names, status, added_date, description, count, name_link]
       sql_on: ${enrollments.ref_program} = ${programs.id}
       
     - join: agencies
