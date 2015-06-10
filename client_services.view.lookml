@@ -31,9 +31,10 @@
 #     type: yesno
 #     sql: ${TABLE}.private
 # 
-#   - dimension: ref_agency
-#     type: int
-#     sql: ${TABLE}.ref_agency
+  - dimension: ref_agency
+    hidden: true
+    type: int
+    sql: ${TABLE}.ref_agency
 
   - dimension: ref_client
     hidden: true

@@ -12,11 +12,13 @@
     type: int
     hidden: true
     sql: ${TABLE}.ethnicity
-
+    
+    
   - dimension: ethnicity_text
     label: 'Ethnicity'
+    suggest: true
     sql: fn_getPicklistValueName('ethnicity',${ethnicity})    
-    
+      
 
   - dimension: gender
     type: int
@@ -26,8 +28,7 @@
   - dimension: gender_text
     label: 'Gender'
     sql: fn_getPicklistValueName('gender',${gender})
-    suggestable: true
-    suggestions: [Male, Female]
+    suggest: true
 
 
   - dimension: race
@@ -37,8 +38,10 @@
     
   - dimension: race_text
     label: 'Race'
+    suggest: true
     sql: fn_getPicklistValueName('race',${TABLE}.race)  
 
+    
   - dimension: ref_agency
     hidden: true
     type: int
@@ -57,6 +60,7 @@
   - dimension: veteran_text
     label: 'Veteran Status'
     sql: fn_getPicklistValueName('veteran',${veteran})
+    suggest: true
 
   - dimension: veteran_branch
     type: int
@@ -137,17 +141,5 @@
 
   # ----- Sets of fields for drilling ------
   sets:
-    detail:
-    - id
-    - vi_f_spdat_child1_fullname
-    - vi_f_spdat_child2_fullname
-    - vi_f_spdat_child3_fullname
-    - vi_f_spdat_child9_fullname
-    - vi_f_spdat_child10_fullname
-    - vi_f_spdat_hh2_fullname
-    - vi_f_spdat_child8_fullname
-    - vi_f_spdat_child4_fullname
-    - vi_f_spdat_child5_fullname
-    - vi_f_spdat_child6_fullname
-    - vi_f_spdat_child7_fullname
+
 

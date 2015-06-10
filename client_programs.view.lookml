@@ -9,9 +9,9 @@
     type: int
     sql: ${TABLE}.id
 
-  - measure: count_enrollments
-    type: count
-    sql: ${id}
+#   - measure: count_enrollments
+#     type: count
+#     sql: ${id}
 
 
   - dimension_group: added
@@ -114,7 +114,6 @@
   - dimension: days_since_start
     label: 'Days in Project'
     type: number
-    format: '%0.0f% days'
     sql: DATEDIFF(COALESCE(${end_date},NOW()),${start_date})
     
   - dimension: days_since_start_tier
@@ -188,7 +187,8 @@
 #     timeframes: [date]
 #     suggestions: ['2014-01-01','2014-07-01'] 
   
-#   - measure: count
-#     type: count
-#     drill_fields: [id, rpt_napa_shelter_report.count, rpt_transitional_path_annual_2014.count]
+  - measure: count
+    type: count
+      
+      
 

@@ -182,6 +182,12 @@
     type: yesno
     sql: ${TABLE}.health_chronic
 
+  - dimension: health_chronic_services
+    label: ' Disability: Chronic Health Services'
+    type: int
+    sql: ${TABLE}.health_chronic_services
+
+
   #- dimension: health_chronic_documented
   #  type: int
   #  sql: ${TABLE}.health_chronic_documented
@@ -198,6 +204,13 @@
     label: 'Disability: Developmental'
     type: yesno
     sql: ${TABLE}.health_dev_disability
+
+  - dimension: health_dev_disability_services
+    label: ' Disability: Developmental Disability Services'
+    type: int
+    sql: ${TABLE}.health_dev_disability_services
+
+
 
   #- dimension: health_dev_disability_documented
   #  type: int
@@ -228,6 +241,12 @@
     label: 'Disability: HIV/AIDS'
     type: yesno
     sql: ${TABLE}.health_hiv
+    
+  - dimension: health_hiv_services
+    label: 'Disability: HIV/AIDS Services'
+    type: int
+    sql: ${TABLE}.health_hiv_services    
+
 
 #  - dimension: health_hiv_documented
 #    type: int
@@ -270,6 +289,13 @@
     label: 'Disability: Mental Health'
     type: yesno
     sql: ${TABLE}.health_mental
+
+  - dimension: health_mental_services
+    label: 'Disability: Mental Health Services'
+    type: int
+    sql: ${TABLE}.health_mental_services
+
+
  
 #   - dimension: health_mental_confirmed
 #     type: int
@@ -295,6 +321,12 @@
     label: 'Disability: Physical'
     type: yesno
     sql: ${TABLE}.health_phys_disability
+    
+  - dimension: health_phys_disability_services
+    label: 'Disability: Physical Services'
+    type: int
+    sql: ${TABLE}.health_phys_disability_services    
+    
 # 
 #   - dimension: health_phys_disability_documented
 #     type: int
@@ -321,6 +353,11 @@
   - dimension: health_substance_abuse
     label: 'Disability: Substance Abuse'
     sql: fn_getPicklistValueName('health_substance_abuse',${TABLE}.health_substance_abuse)
+    
+  - dimension: health_substance_abuse_services
+    label: 'Disability: Substance Abuse Services'
+    type: int
+    sql: ${TABLE}.health_substance_abuse_services    
 
 #   - dimension: health_substance_abuse_confirmed
 #     type: int

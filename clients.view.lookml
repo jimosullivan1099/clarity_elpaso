@@ -35,6 +35,7 @@
     
   - dimension: age
     label: 'Current Age'
+    description: ' This is the age of the client as of when this report was last run.'
     type: number
     sql: YEAR(NOW()) - YEAR(${birth_date}) - (DATE_FORMAT(NOW(), '%m%d') < DATE_FORMAT(${birth_date}, '%m%d'))
 
@@ -42,6 +43,7 @@
     type: tier
     style: integer
     tiers: [0,18,25,35,45,55,65]
+    suggest: true
     sql: ${age}
     
   - measure: average_age

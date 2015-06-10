@@ -127,7 +127,6 @@
   - dimension: name
     sql: ${TABLE}.name
     
-
     
   - dimension: agency_project_name
     label: 'Full Name'
@@ -136,7 +135,8 @@
   - measure: list_of_program_names
     type: list
     list_field: agency_project_name
-    
+
+
   - dimension: program_applicability
     type: int
     sql: ${TABLE}.program_applicability

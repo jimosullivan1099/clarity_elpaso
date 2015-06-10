@@ -3,11 +3,13 @@
 
   - dimension: id
     primary_key: true
+    hidden: true
     type: int
     sql: ${TABLE}.id
 
   - dimension_group: added
     type: time
+    hidden: true
     timeframes: [time, date, week, month]
     sql: ${TABLE}.added_date
 
@@ -24,6 +26,7 @@
     sql: ${TABLE}.email
 
   - dimension_group: last_updated
+    hidden: true
     type: time
     timeframes: [time, date, week, month]
     sql: ${TABLE}.last_updated
@@ -42,22 +45,29 @@
     sql: ${TABLE}.private
 
   - dimension: ref_agency
+    hidden: true
     type: int
     sql: ${TABLE}.ref_agency
 
   - dimension: ref_client
+    hidden: true
     type: int
     sql: ${TABLE}.ref_client
 
   - dimension: ref_type
     type: int
     sql: ${TABLE}.ref_type
+    sql: fn_getPicklistValueName('address_types',${TABLE}.ref_type)    
+      
+
 
   - dimension: ref_user
+    hidden: true
     type: int
     sql: ${TABLE}.ref_user
 
   - dimension: ref_user_updated
+    hidden: true
     type: int
     sql: ${TABLE}.ref_user_updated
 
